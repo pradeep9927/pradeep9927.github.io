@@ -42,11 +42,11 @@
       <p>
         Indian Institute of Technology Kharagpur · Autonomous robots · Vision Transformers · Real-world deployment
       </p>
-      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-        <a href="mailto:pradeepnahak2008@gmail.com" title="Email"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" width="26"></a>
-        <a href="https://github.com/pradeep9927" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" width="26"></a>
-        <a href="https://www.linkedin.com/in/pradeep-nahak-71126172/" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="26"></a>
-        <a href="https://scholar.google.com/citations?user=X0pJvVcAAAAJ&hl=en" target="_blank" title="Google Scholar"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlescholar.svg" alt="Google Scholar" width="26"></a>
+      <div class="social-icons">
+        <a href="mailto:pradeepnahak2008@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2z" fill="#2563eb"/><path d="M2 4l10 9 10-9" fill="#93c5fd"/></svg></a>
+        <a href="https://github.com/pradeep9927" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path fill="#111827" d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.45 7.86 10.98.58.11.79-.25.79-.56v-2.02c-3.2.7-3.87-1.55-3.87-1.55-.52-1.32-1.27-1.67-1.27-1.67-1.04-.72.08-.71.08-.71 1.15.08 1.76 1.19 1.76 1.19 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.56-.29-5.26-1.28-5.26-5.69 0-1.26.45-2.3 1.19-3.11-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.19a10.9 10.9 0 012.9-.39c.99 0 1.99.13 2.9.39 2.2-1.5 3.17-1.19 3.17-1.19.63 1.59.23 2.76.11 3.05.74.81 1.19 1.85 1.19 3.11 0 4.42-2.7 5.4-5.27 5.69.41.36.77 1.07.77 2.15v3.19c0 .31.21.67.8.56A11.53 11.53 0 0023.5 12C23.5 5.74 18.27.5 12 .5z"/></svg></a>
+        <a href="https://www.linkedin.com/in/pradeep-nahak-71126172/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path fill="#0a66c2" d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6a2.5 2.5 0 00-2.52-2.5zM3 8.98h4v12H3zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.3h-4v-5.59c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.69H9z"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=X0pJvVcAAAAJ&hl=en" target="_blank" title="Google Scholar"><svg viewBox="0 0 24 24"><path fill="#4285f4" d="M12 2L1 9l11 7 9-5.73V17h2V9z"/><path fill="#34a853" d="M12 13.5L5 9l7-4.5 7 4.5z"/></svg></a>
       </div>
     </div>
     <img src="images/profile.jpg" alt="Pradeep Nahak" />
@@ -112,11 +112,19 @@
 <section class="container">
   <h2>Contact Me</h2>
   <p>If you would like to collaborate, discuss research, or offer project opportunities, feel free to contact me.</p>
-  <form action="mailto:pradeepnahak2008@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="subject" placeholder="Subject" required />
-    <textarea name="message" rows="6" placeholder="Your message" required></textarea>
-    <button type="submit">Send Email</button>
+  <<form onsubmit="sendEmail(event)">
+    <input type="text" id="subject" placeholder="Subject" required />
+    <textarea id="message" rows="6" placeholder="Your message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
+  <script>
+    function sendEmail(e) {
+      e.preventDefault();
+      const subject = encodeURIComponent(document.getElementById('subject').value);
+      const body = encodeURIComponent(document.getElementById('message').value);
+      window.location.href = `mailto:pradeepnahak2008@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
 </section>
 
 <footer>
